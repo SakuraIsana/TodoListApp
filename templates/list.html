@@ -1,0 +1,25 @@
+{% include 'head.html' %}
+
+<body>
+    <header role="banner">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">        
+          <a class="nav-link" href='/' style="color:white;"> Accueil</a>
+          <a class="nav-link" href='/list' style="color:white;">Todolist </a>
+          <a class="nav-link" href='/add' style="color:white;"> Ajouter un todo </a>
+          <!--<a class="nav-link" href='/remove' style="color:white;"> Retirer un todo</a>-->
+          <a class="nav-link" href='/remove_list' style="color:white;"> Retirer todo</a>
+          <a class="nav-link" href='/modify' style="color:white;">Modify</a>
+
+      </nav>
+    </header>
+		<div class="content" >
+
+            <div class="modal-body">
+			<h4> Todolist : </h4>
+			{% for todo in list_todo%}
+                <li>{{todo._id_t}} : {{todo._description}}</li>
+			{% endfor %}
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+{% include 'head.html' %}
+
+<body>
+    <header role="banner">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">        
+            <a class="nav-link" href='/' style="color:white;"> Accueil</a>
+            <a class="nav-link" href='/list' style="color:white;">Todolist </a>
+            <a class="nav-link" href='/add' style="color:white;"> Ajouter un todo </a>
+            <!--<a class="nav-link" href='/remove' style="color:white;"> Retirer un todo</a>-->
+            <a class="nav-link" href='/remove_list' style="color:white;"> Retirer todo</a>
+            <a class="nav-link" href='/modify' style="color:white;">Modify</a>
+
+      </nav>
+    </header>
+		<div class="container" >
+            <br>
+			<h4> Todolist : </h4>
+            <form action="" method="post">
+                <div class="form-check">
+                {% for todo in list_todo%}
+                    <input class="form-check-input" type="radio" id={{todo._id_t}} name="to_update" value={{todo._id_t}}>{{todo._id_t}} : {{todo._description}}<br>
+			    {% endfor %}
+                </div>
+                <br>
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Valider</button>
+                </div>
+            </form>
+			
+			
+		</div>
+	</body>
+</html>
